@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Flights</title>
+</head>
+<body>
+<h2>Flights:</h2>
+<table>
+<tr><th>Code</th>
+<th>Status</th>
+
+
+</tr>
+
+
+<tr th:each="product:${products}">
+<td th:text="${product.productCode}"></td>
+<td th:text="${product.status}"></td>
+<td><a th:href="@{'showCompleteReservation?productId='+${product.id}}">Select</a></td>
+</tr>
+
+
+</table>
+</body>
+</html>
